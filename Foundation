@@ -1,0 +1,43 @@
+
+四舍五入：   题目指的是正浮点  float单精度浮点， double双精度浮点
+	 接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。
+
+public class Demo {
+	@Test
+	public void demo01(){
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNextDouble()){
+			double m = sc.nextDouble();
+			System.out.println(Math.round(m));
+		}
+	}
+	
+	/
+	 * 如果没有函数调用的话，就用最原始的。
+	 *       利用float转换为int会丢失小数点后的数
+	 */
+
+	@Test
+	public void demo02(){
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNext()){
+			float a = sc.nextFloat();
+			int b = (int)a;
+			float c = a - b;
+			if(c >= 0.5){
+				System.out.println(b + 1);
+			}else{
+				System.out.println(b);
+			}
+		}
+	}
+	
+	@Test
+	public void demo03(){
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNext()){
+			double m = sc.nextDouble();
+			System.out.println((int)(m + 0.5));
+		}
+	}
+}
